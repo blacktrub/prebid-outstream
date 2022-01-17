@@ -34,7 +34,11 @@ renderer: {
                     autoPlay: true,
                     preload: true,
                     mute: false,
-                    adText: 'This is sample adtext.'
+                    adText: 'This is sample adtext.',
+                    vastLoadedCallback: () => {},
+                    noVastVideoCallback: () => {},
+                    vastVideoSkippedCallback: () => {},
+                    vastVideoEndedCallback: () => {}
                 }
                 // Call to Global object of renderer.
                 // Takes bid, element ID and configuration object as parameters

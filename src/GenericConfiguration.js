@@ -34,5 +34,10 @@ export default class GenericConfiguration {
         this.adText =  ( typeof config.adText === 'string' ) ?
             config.adText :
             '';
+
+        this.vastLoadedCallback = config.vastLoadedCallback ? config.vastLoadedCallback : () => {};
+        this.noVastVideoCallback = config.noVastVideoCallback ? config.noVastVideoCallback : () => {};
+        this.vastVideoSkippedCallback = config.vastVideoSkippedCallback ? config.vastVideoSkippedCallback : () => {};
+        this.vastVideoEndedCallback = config.vastVideoEndedCallback ? config.vastVideoEndedCallback : () => {};
     }
 }

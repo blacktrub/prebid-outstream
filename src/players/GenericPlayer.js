@@ -4,7 +4,7 @@ import logger from '../Logger';
 // Provide implementation of the below methods in each player's derived class.
 export default class GenericPlayer{
     generatePlayerConfig (bid, elementId, genericConfiguration){
-        logger.debug("Create player config from generic configuration." + JSON.stringify(bid) + elementId + JSON.stringify(genericConfiguration));
+        logger.debug("Create player config from generic configuration." + logger.prepare(bid) + elementId + logger.prepare(genericConfiguration));
         throw new Error('Please provide concrete implementation for generatePlayerConfig method.');
     }
 

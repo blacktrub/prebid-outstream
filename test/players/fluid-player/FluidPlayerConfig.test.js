@@ -29,7 +29,11 @@ describe('Test cases for players/fluid-player/FluidPlayerConfig.js file', () => 
         autoPlay: false,
         preload: false,
         mute: true,
-        adText: 'Hi Valid Object'
+        adText: 'Hi Valid Object',
+        noVastVideoCallback: function() {},
+        vastLoadedCallback: function() {},
+        vastVideoEndedCallback: function() {},
+        vastVideoSkippedCallback: function() {},
     };
     const obj = new FluidPlayerConfig(bid, elementId, genericConfiguration);
 

@@ -7,7 +7,7 @@ export default class OutstreamPlayer {
     // bid, elementId is compulsary
     // config object is optional
     constructor(bid, elementId, config){
-        logger.debug("Inside OutstreamPlayer constructor with parameters: " + JSON.stringify(bid) + elementId + JSON.stringify(config));
+        logger.debug("Inside OutstreamPlayer constructor with parameters: " + logger.prepare(bid) + elementId + logger.prepare(config));
         // Check if bid object is available
         if( bid === undefined ||
             bid === null ||
@@ -34,12 +34,12 @@ export default class OutstreamPlayer {
 
         // Create config object
         this.config = new GenericConfiguration(config);
-        logger.log("Generic configuration: " + JSON.stringify(this.config));
+        logger.log("Generic configuration: " + logger.prepare(this.config));
 
         this.playerAvailable = false;
         this.isVideoPausedDueToScroll = false;
         this.player = new PlayerFactory();
-        logger.log("Player object: " + JSON.stringify(this.player));
+        logger.log("Player object: " + logger.prepare(this.player));
 
         this.player.generatePlayerConfig(this.bid, this.elementId, this.config);
         this.insertPlayer();

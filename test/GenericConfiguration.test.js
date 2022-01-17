@@ -13,7 +13,11 @@ describe('Test cases for GenericConfiguration.js file', () => {
             autoPlay: true,
             preload: true,
             mute: true,
-            adText: ''
+            adText: '',
+            noVastVideoCallback: expect.any(Function),
+            vastLoadedCallback: expect.any(Function),
+            vastVideoEndedCallback: expect.any(Function),
+            vastVideoSkippedCallback: expect.any(Function),
         });
     });
 
@@ -28,7 +32,11 @@ describe('Test cases for GenericConfiguration.js file', () => {
             autoPlay: true,
             preload: true,
             mute: true,
-            adText: ''
+            adText: '',
+            noVastVideoCallback: expect.any(Function),
+            vastLoadedCallback: expect.any(Function),
+            vastVideoEndedCallback: expect.any(Function),
+            vastVideoSkippedCallback: expect.any(Function),
         });
     });
 
@@ -51,7 +59,11 @@ describe('Test cases for GenericConfiguration.js file', () => {
             autoPlay: false,
             preload: true,
             mute: true,
-            adText: 'Hi'
+            adText: 'Hi',
+            noVastVideoCallback: expect.any(Function),
+            vastLoadedCallback: expect.any(Function),
+            vastVideoEndedCallback: expect.any(Function),
+            vastVideoSkippedCallback: expect.any(Function),
         });
     });
 
@@ -76,7 +88,11 @@ describe('Test cases for GenericConfiguration.js file', () => {
             autoPlay: false,
             preload: false,
             mute: true,
-            adText: 'Hi Valid Object'
+            adText: 'Hi Valid Object',
+            noVastVideoCallback: expect.any(Function),
+            vastLoadedCallback: expect.any(Function),
+            vastVideoEndedCallback: expect.any(Function),
+            vastVideoSkippedCallback: expect.any(Function),
         });
     });
 });

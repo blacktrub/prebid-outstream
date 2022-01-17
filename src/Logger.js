@@ -24,6 +24,21 @@ class Logger{
         }
     }
 
+    prepare(msg) {
+        if (typeof msg === 'string') {
+            return msg
+        }
+        return JSON.stringify(msg, (key, value) => {
+            if (typeof value === "function") {
+                return "function"
+            }
+            if (typeof value === "object") {
+                return "object"
+            }
+            return value
+        })
+    }
+
     log(msg) {
         if (this.debugLevel >= this.LOG_LEVEL) {
             this.consoleLog("log", "LOG", msg);

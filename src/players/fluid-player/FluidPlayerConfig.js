@@ -24,9 +24,11 @@ export default class FluidPlayerConfig{
             vastAdvanced: {
                 vastLoadedCallback:       (() => {
                     logger.info("vastLoadedCallback - VAST loaded"); 
+                    genericConfiguration.vastLoadedCallback();
                 }),
                 noVastVideoCallback:      (() => {
                     logger.info("noVastVideoCallback - empty VAST");
+                    genericConfiguration.noVastVideoCallback();
                     if(document.getElementById(elementId) !== null){
                         logger.log("noVastVideoCallback - remove element from DOM.");
                         document.getElementById(elementId).style.display = 'none';
@@ -34,6 +36,7 @@ export default class FluidPlayerConfig{
                 }),
                 vastVideoSkippedCallback: (() => {
                     logger.info("vastVideoSkippedCallback - Ad is skipped");
+                    genericConfiguration.vastVideoSkippedCallback();
                     if(document.getElementById(elementId) !== null){
                         logger.log("vastVideoSkippedCallback - remove element from DOM.");
                         document.getElementById(elementId).style.display = 'none';
@@ -41,6 +44,7 @@ export default class FluidPlayerConfig{
                 }),
                 vastVideoEndedCallback:   (() => {
                     logger.info("vastVideoEndedCallback - Ad ended");
+                    genericConfiguration.vastVideoEndedCallback();
                     if(document.getElementById(elementId) !== null){
                         logger.log("vastVideoEndedCallback - remove element from DOM.");
                         document.getElementById(elementId).style.display = 'none';

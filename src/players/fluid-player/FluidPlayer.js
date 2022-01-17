@@ -32,10 +32,10 @@ export default class FluidPlayer extends GenericPlayer{
         this.element = document.getElementById(this.elementId);
 
         this.genericConfiguration = genericConfiguration;
-        logger.log("FluidPlayer-generatePlayerConfig" + JSON.stringify( this.genericConfiguration));
+        logger.log("FluidPlayer-generatePlayerConfig" + logger.prepare( this.genericConfiguration));
 
         this.fluidPlayerConfig = new FluidPlayerConfig(this.bid, this.elementId, this.genericConfiguration);
-        logger.log("this.fluidPlayerConfigObj" + JSON.stringify(this.fluidPlayerConfig));
+        logger.log("this.fluidPlayerConfigObj" + logger.prepare(this.fluidPlayerConfig));
     }
 
     setupPlayer(videoPlayerId){

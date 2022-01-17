@@ -16,7 +16,7 @@ class Utils {
     }
 
     getOffset(element) {
-        logger.debug("Inside Utils.getOffset for element: " + JSON.stringify(element));
+        logger.debug("Inside Utils.getOffset for element: " + logger.prepare(element));
         var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         // Check if element is not present
@@ -77,7 +77,7 @@ class Utils {
         }
         promise
             .then(() => logger.debug("Document exited from full screen mode."))
-            .catch((err) => logger.debug("Not able to exit from full screen mode. Received error: " + JSON.stringify(err)));
+            .catch((err) => logger.debug("Not able to exit from full screen mode. Received error: " + logger.prepare(err)));
     }
 }
 
